@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MainActivity">
+
+    <android.support.design.widget.AppBarLayout
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:theme="@style/AppTheme.AppBarOverlay">
+
+        <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="?attr/colorPrimary"
+                app:popupTheme="@style/AppTheme.PopupOverlay"/>
+
+    </android.support.design.widget.AppBarLayout>
+
+    <include layout="@layout/content_main"/>
+
+    <!--    <android.support.design.widget.FloatingActionButton
+                android:id="@+id/fab"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|end"
+                android:layout_margin="@dimen/fab_margin"
+                app:srcCompat="@android:drawable/ic_dialog_email"/> -->
+
+</android.support.design.widget.CoordinatorLayout>
+
+        <!--TODO Add two toggle buttons in a horizontal line below the text area
+                  Use the ConstraintLayout to arrange these widgets
+                  - the left toggle button should hide and show the textView
+                  (hint: use the textView's visibility attribute inherited from View) TextView documentation is here
+                  - the right toggle button should change the textView's backgroundColor
+            TODO Have "Hello World" defined in your stings.xml file and used in the content_main.xml layout file
+            TODO Have a different message come up when the button is clicked
+            TODO Log information using Log.i
+            TODO Give the "Hello World" textfield an id in the content_main.xml file
+                  and have the words change to something else when the button is clicked.*/ -->
