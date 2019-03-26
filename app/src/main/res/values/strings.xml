@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Color Blender</string>
+    <string name="blended_color">Blended Color</string>
+    <string name="the_new_blended_color">The new blended color</string>
+    <string name="color_1">Color 1</string>
+    <string name="color_2">Color 2</string>
+</resources>
