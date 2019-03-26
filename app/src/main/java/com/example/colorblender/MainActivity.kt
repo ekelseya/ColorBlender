@@ -10,19 +10,20 @@ import android.view.View
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.SeekBar
+import android.widget.TextView
 import kotlin.math.roundToInt
 
 class MainActivity : AppCompatActivity() {
 
-    var arrayColorOne = arrayListOf<Int>(0, 0, 0)
-    var arrayColorTwo = arrayListOf<Int>(0, 0, 0)
+    var arrayColorOne = arrayListOf<Int>(255, 255, 255)
+    var arrayColorTwo = arrayListOf<Int>(255, 255, 255)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
         val colorViewOne = findViewById<ImageView>(R.id.colorView1)
-
+        val colorOneLabel = findViewById<TextView>(R.id.color_1_percent)
         val colorOneButton = findViewById<Button>(R.id.btn_clr_1)
         colorOneButton.setOnClickListener {
             launchColorPicker(colorOneButton)
@@ -41,6 +42,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         val colorViewTwo = findViewById<ImageView>(R.id.colorView2)
+        val colorTwoLabel = findViewById<TextView>(R.id.color_2_percent)
         val colorTwoButton = findViewById<Button>(R.id.btn_clr_2)
         colorTwoButton.setOnClickListener {
             launchColorPicker(colorTwoButton)
@@ -58,7 +60,7 @@ class MainActivity : AppCompatActivity() {
         val blendSeekBar = findViewById<SeekBar>(R.id.seekBar)
         blendSeekBar.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
             override fun onStartTrackingTouch(seekBar: SeekBar) {
-
+                blendSeekBar.progress = 50
             }
 
             override fun onStopTrackingTouch(seekBar: SeekBar?) {
@@ -67,6 +69,11 @@ class MainActivity : AppCompatActivity() {
 
             override fun onProgressChanged(seekBar: SeekBar, i: Int, b: Boolean) {
                 val blendValue = blendSeekBar.progress
+                val colorOnePercent = """${(100 - blendValue)}%"""
+                val colorTwoPercent = "$blendValue%"
+                colorOneLabel.text = colorOnePercent
+                colorTwoLabel.text = colorTwoPercent
+
 
                 val redOne = arrayColorOne[0]
                 val greenOne = arrayColorOne[1]
